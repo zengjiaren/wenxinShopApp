@@ -1,0 +1,22 @@
+<!--pages/my/my.wxml-->
+<!--pages/my/my.wxml-->
+<view class='title-box'>
+      <view class='title-img'>
+            <image src='{{avatarUrl}}'></image>
+      </view>
+      <view class='title-txt'>
+            <text>王宝乐</text> <!-- {{nickName}} -->
+      </view>
+</view>
+
+<view class='content-box'>
+      <view class='content clearfix' wx:for="{{items}}" wx:key="*this">
+            <text>{{item.text}}</text>
+            <image src='{{item.url}}'></image>
+      </view>
+</view>
+
+<view class='exit'>
+      <text>退出</text>
+</view>
+

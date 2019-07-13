@@ -1,0 +1,45 @@
+<!--pages/list/list.wxml-->
+<view class='xq'>
+      <swiper class='height' indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+            <block wx:for="{{date}}" wx:key="{{index}}">
+            <!-- <block> -->
+                  <swiper-item>
+                        <image src="{{item.url}}" class="slide-image"  mode="widthFix" />
+                        <!-- <image src="/img/2.jpg" class="slide-image" mode="widthFix" /> -->
+                  </swiper-item>
+            </block>
+      </swiper>
+
+      <view class='conent' wx:for="{{date}}" wx:key="{{index}}">
+            <text>商品简介：</text>
+            <view class='js'>{{item.title}}</view>
+            <text>商品价格：</text>
+            <view class='price'>￥ {{item.price}}</view>
+            <view class='title'>
+                  <text>商品参数：</text>
+            </view>
+            <view class='js'>无</view>
+      </view>
+
+      <view class='footer clearfix'>
+            <view class='footer-items'>
+                  <view class='footer-icon'>
+                        <image src='/img/car1.png'></image>
+                        <text>{{shopcartCount}}</text>
+                        <!-- <text>1</text> -->
+                  </view>
+            </view>
+            <!-- <view class='footer-items' bindtap='goToIndex'> -->
+            <view class='footer-items'>
+                  <text>前往商城</text>
+            </view>
+            <view class='footer-items' bindtap='addShopcart' data-item='{{date}}'>
+            <!-- <view class='footer-items'> -->
+                  <text>加入购物车</text>
+            </view>
+            <view class='footer-items' bindtap='goToCar'>
+            <!-- <view class='footer-items'> -->
+                  <text>前往付款</text>
+            </view>
+      </view>
+</view>
